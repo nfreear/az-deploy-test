@@ -3,6 +3,7 @@
   "name": "@nfreear/az-deploy-test",
   "version": "0.8.5",
   "main": "lib/index.js",
+  "repository": "https://github.com/nfreear/az-deploy-test.git",
   "scripts": {
     "start": "node lib/index.js",
     "test": "semistandard"
