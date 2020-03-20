@@ -43,13 +43,17 @@ jobs:
     - name: Dump GitHub context
       env:
         GITHUB_CONTEXT: ${{ toJson(github) }}
-      run: echo "$GITHUB_CONTEXT"
+      run: |
+        echo "$GITHUB_CONTEXT"
+        echo "$GITHUB_CONTEXT" > ./github-context.json
+        pwd
+        ls -lh
     - name: No deploy
       if: "github.event_name != 'release'"
-      run: "echo Event: ${{ github.event_name }} (No deploy)"
+      run: "echo Event: '${{ github.event_name }}' ~ No deploy"
     - name: 'Deploy to Azure WebApp (release only)'
       # if: "contains( github.event.head_commit.message, '[deploy]' )"
-      if: "github.event_name == 'release'"
+      if: "github.event_name == 'release' || contains( github.event.head_commit.message, '[deploy]' )"
       uses: azure/webapps-deploy@v2
       with:
         app-name: ${{ env.AZURE_WEBAPP_NAME }}
