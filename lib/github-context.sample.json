@@ -1,0 +1,139 @@
+{
+  "#": "SAMPLE",
+
+  "token": "***",
+  "ref": "refs/heads/master",
+  "sha": "e9d481df95950131d681d91508ee05b34cafb4fa",
+  "repository": "nfreear/az-deploy-test",
+  "repositoryUrl": "git://github.com/nfreear/az-deploy-test.git",
+  "run_id": "59680145",
+  "run_number": "3",
+  "actor": "nfreear",
+  "workflow": "Deploy Node.js to Azure Web App",
+  "head_ref": "",
+  "base_ref": "",
+
+  "event_name": "push",
+
+  "event": {
+    "after": "e9d481df95950131d681d91508ee05b34cafb4fa",
+    "base_ref": null,
+    "before": "40d04367a16c65f6b33c66fc01c1a8c46387cfa9",
+    "commits": [
+      {
+        "author": {
+          "email": "nfreear+@yahoo.co.uk",
+          "name": "Nick F..",
+          "username": "nfreear"
+        },
+        "committer": {
+          "email": "nfreear+@yahoo.co.uk",
+          "name": "Nick F..",
+          "username": "nfreear"
+        },
+        "distinct": true,
+        "id": "e9d481df95950131d681d91508ee05b34cafb4fa",
+        "message": "Fix to YAML; semistandard lint fix",
+        "timestamp": "2020-03-20T13:32:38Z",
+        "tree_id": "7471c0e4fc242bcd4812490e30420cedbef4e796",
+        "url": "https://github.com/nfreear/az-deploy-test/commit/e9d481df95950131d681d91508ee05b34cafb4fa"
+      }
+    ],
+    "compare": "https://github.com/nfreear/az-deploy-test/compare/40d04367a16c...e9d481df9595",
+    "created": false,
+    "deleted": false,
+    "forced": false,
+    "head_commit": {
+      "author": {
+        "email": "nfreear+@yahoo.co.uk",
+        "name": "Nick F..",
+        "username": "nfreear"
+      },
+      "committer": {
+        "email": "nfreear+@yahoo.co.uk",
+        "name": "Nick F..",
+        "username": "nfreear"
+      },
+      "distinct": true,
+      "id": "e9d481df95950131d681d91508ee05b34cafb4fa",
+      "message": "Fix to YAML; semistandard lint fix",
+      "timestamp": "2020-03-20T13:32:38Z",
+      "tree_id": "7471c0e4fc242bcd4812490e30420cedbef4e796",
+      "url": "https://github.com/nfreear/az-deploy-test/commit/e9d481df95950131d681d91508ee05b34cafb4fa"
+    },
+    "pusher": {
+      "email": "nfreear+@yahoo.co.uk",
+      "name": "nfreear"
+    },
+    "ref": "refs/heads/master",
+    "repository": {
+      "archive_url": "...",
+      "created_at": 1584698504,
+      "default_branch": "master",
+      "deployments_url": "https://api.github.com/repos/nfreear/az-deploy-test/deployments",
+      "description": "Testing continuous deployment (CD) to Azure...",
+      "disabled": false,
+      "downloads_url": "https://api.github.com/repos/nfreear/az-deploy-test/downloads",
+      "events_url": "https://api.github.com/repos/nfreear/az-deploy-test/events",
+      "fork": false,
+      "forks": 0,
+      "forks_count": 0,
+      "forks_url": "https://api.github.com/repos/nfreear/az-deploy-test/forks",
+      "full_name": "nfreear/az-deploy-test",
+      "git_commits_url": "...",
+      "hooks_url": "https://api.github.com/repos/nfreear/az-deploy-test/hooks",
+      "html_url": "https://github.com/nfreear/az-deploy-test",
+      "id": 248722886,
+      "issue_comment_url": "...",
+      "language": "JavaScript",
+      "languages_url": "https://api.github.com/repos/nfreear/az-deploy-test/languages",
+      "license": null,
+      "master_branch": "master",
+      "merges_url": "https://api.github.com/repos/nfreear/az-deploy-test/merges",
+      "milestones_url": "https://api.github.com/repos/nfreear/az-deploy-test/milestones{/number}",
+      "mirror_url": null,
+      "name": "az-deploy-test",
+      "node_id": "MD...DY=",
+      "notifications_url": "https://api.github.com/repos/nfreear/az-deploy-test/notifications{?since,all,participating}",
+      "open_issues": 0,
+      "open_issues_count": 0,
+      "owner": {
+        "avatar_url": "https://avatars1.githubusercontent.com/u/131235?v=4",
+        "email": "nfreear+@yahoo.co.uk",
+        "events_url": "...",
+        "gists_url": "https://api.github.com/users/nfreear/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/nfreear",
+        "id": 131235,
+        "login": "nfreear",
+        "name": "nfreear",
+        "node_id": "MDQ...zNQ==",
+        "organizations_url": "...",
+        "type": "User",
+        "url": "https://api.github.com/users/nfreear"
+      },
+      "private": false,
+      "pulls_url": "https://api.github.com/repos/nfreear/az-deploy-test/pulls{/number}",
+      "pushed_at": 1584711185,
+      "releases_url": "https://api.github.com/repos/nfreear/az-deploy-test/releases{/id}",
+      "size": 29,
+      "ssh_url": "git@github.com:nfreear/az-deploy-test.git",
+      "stargazers": 0,
+      "stargazers_count": 0,
+      "stargazers_url": "...",
+      "updated_at": "2020-03-20T13:30:07Z",
+      "url": "https://github.com/nfreear/az-deploy-test",
+      "watchers": 0,
+      "watchers_count": 0
+    },
+    "sender": {
+      "avatar_url": "...",
+      "id": 131235,
+      "login": "nfreear",
+      "...": "..."
+    }
+  },
+  "workspace": "/home/runner/work/az-deploy-test/az-deploy-test",
+  "action": "run2",
+  "event_path": "/home/runner/work/_temp/_github_workflow/event.json"
+}
