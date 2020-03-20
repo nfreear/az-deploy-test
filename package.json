@@ -1,0 +1,16 @@
+{
+  "private": true,
+  "name": "@nfreear/az-deploy-test",
+  "version": "0.8.5",
+  "main": "lib/index.js",
+  "scripts": {
+    "start": "node lib/index.js",
+    "test": "semistandard"
+  },
+  "devDependencies": {
+    "semistandard": "^14.2.0"
+  },
+  "dependencies": {
+    "restify": "^8.5.1"
+  }
+}
