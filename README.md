@@ -5,6 +5,8 @@
 
 Testing continuous deployment (_CD_) to an Azure Web App.
 
+ * [ndf-test.azurewebsites.net][site]
+
 It uses a _GitHub workflow_ based on this [YAML template][t]
 and the [GitHub context][gc].
 
@@ -43,6 +45,7 @@ jobs:
 ---
 License: [MIT](https://nfreear.mit-license.org/ "MIT License")
 
+[site]: https://ndf-test.azurewebsites.net/index.html
 [w]: https://github.com/nfreear/az-deploy-test/blob/master/.github/workflows/nodejs.yml#L54-L61
   "nodejs YAML"
 [gc]: https://help.github.com/en/actions/reference/context-and-expression-syntax-for-github-actions#github-context
