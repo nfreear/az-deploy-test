@@ -40,7 +40,7 @@ jobs:
         npm ci
         npm run build --if-present
         npm test
-    - name: Dump GitHub context
+    - name: Dump GitHub context to file
       env:
         GITHUB_CONTEXT: ${{ toJson(github) }}
       run: |

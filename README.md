@@ -1,7 +1,9 @@
 
+[![Deploy Node.js to Azure Web App][gh-badge]][gh-link]
+
 # az-deploy-test
 
-Testing continuous deployment (_CD_) to Azure Web App.
+Testing continuous deployment (_CD_) to an Azure Web App.
 
 It uses a _GitHub workflow_ based on this [YAML template][t]
 and the [GitHub context][gc].
@@ -46,3 +48,6 @@ License: [MIT](https://nfreear.mit-license.org/ "MIT License")
 [gc]: https://help.github.com/en/actions/reference/context-and-expression-syntax-for-github-actions#github-context
 [t]: https://github.com/Azure/actions-workflow-samples/blob/master/AppService/node.js-webapp-on-azure.yml#L35-L40
   "node.js-webapp-on-azure YAML"
+[gh-badge]: https://github.com/nfreear/az-deploy-test/workflows/Deploy%20Node.js%20to%20Azure%20Web%20App/badge.svg
+[gh-link]:  https://github.com/nfreear/az-deploy-test/actions
+  "Status ~ 'Deploy Node.js to Azure Web App'"

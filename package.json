@@ -1,8 +1,8 @@
 {
   "private": true,
   "name": "@nfreear/az-deploy-test",
-  "description": "Testing continuous deployment (CD) to Azure.",
-  "version": "0.8.6",
+  "description": "Testing continuous deployment (CD) to an Azure Web App.",
+  "version": "0.9.0",
   "license": "MIT",
   "main": "lib/index.js",
   "repository": "https://github.com/nfreear/az-deploy-test.git",
