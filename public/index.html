@@ -1,0 +1,19 @@
+<!doctype html> <title> Deployment data </title>
+
+<style> body { font: 1.3rem sans-serif; margin: 1rem auto; max-width: 44rem; } </style>
+
+<h1> Deployment data </h1>
+
+<pre id="deploy-data"> Loading ... </pre>
+
+<script>
+  fetch('/api/messages/Test')
+    .then(resp => resp.json())
+    .then(data => {
+      const $PRE = document.querySelector('#deploy-data');
+
+      console.warn('API data:', data, $PRE);
+
+      $PRE.innerText = JSON.stringify(data, null, 2);
+    });
+</script>
