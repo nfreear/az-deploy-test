@@ -2,7 +2,7 @@
 
 <style>
   body { font: 1.1rem/1.6 sans-serif; margin: 1rem auto; max-width: 48rem; }
-  pre  { border: 1px solid #bbb; padding: 1rem .3rem; }
+  pre  { border: 1px solid #bbb; padding: 1rem .2rem; }
 </style>
 
 <h1> Deployment data </h1>
@@ -10,7 +10,7 @@
 <pre id="deploy-data"> Loading ... </pre>
 
 <script>
-  fetch('/api/messages/Test')
+  fetch('/api/messages/Jo%20TEST')
     .then(resp => resp.json())
     .then(data => {
       const $PRE = document.querySelector('#deploy-data');
