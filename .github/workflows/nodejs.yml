@@ -67,8 +67,9 @@ jobs:
         name: code-artifact
     - name: Unzip
       run: |
-        ls -alh code-artifact
-        unzip code-artifact/*.zip
+        pwd
+        ls -lh code-artifact
+        unzip -q code-artifact/*.zip
         pwd
         ls -alh
         # ls -alh | egrep '\.(env|json)'

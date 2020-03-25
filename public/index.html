@@ -1,13 +1,12 @@
 <!doctype html> <title> az-deploy-test </title>
 
-<style>
-  body { font: 1.1rem/1.6 sans-serif; margin: 1rem auto; max-width: 48rem; }
-  pre  { border: 1px solid #bbb; padding: 1rem .2rem; }
-</style>
+<link rel="stylesheet" href="style.css" />
 
 <h1> Deployment data </h1>
 
-<pre id="deploy-data"> Loading ... </pre>
+<article id="deploy-data">
+  <p class="wc-loading"> Loading ... </p>
+</article>
 
 <script>
   fetch('/api/messages/Jo%20TEST')
@@ -15,9 +14,13 @@
     .then(data => {
       const $PRE = document.querySelector('#deploy-data');
 
-      console.warn('API data:', data, $PRE);
+      setTimeout(() => {
+        console.warn('API data:', data, $PRE);
 
-      $PRE.innerText = JSON.stringify(data, null, 2);
+        $PRE.innerHTML = '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
+        $PRE.classList.add('loaded');
+      },
+      2000);
     });
 </script>
 
