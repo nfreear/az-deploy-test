@@ -1,12 +1,13 @@
 # https://github.com/Azure/appservice-actions/issues/4#issuecomment-548736016
 # https://github.com/Azure/actions-workflow-samples/blob/master/AppService/node.js-webapp-on-azure.yml
 
-name: Deploy Node.js to Azure Web App
+name: Deploy Node.js to Azure
+# Was: name: Deploy Node.js to Azure Web App
 
 on:
-  # [push]
   push:
-    branches: [master]
+    # All branches!
+    branches: [master, '**']
   release:
     types: [published]
 
@@ -23,12 +24,14 @@ env:
   NODE_VERSION: '12.x'             # set this to the node version to use
 
 jobs:
-  build-and-deploy:
-    name: Build and Deploy
+  job_build:
+    name: Build and Test
     runs-on: ubuntu-latest
     steps:
 
-    - uses: actions/checkout@master
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 1
     - name: Use Node.js ${{ env.NODE_VERSION }}
       uses: actions/setup-node@v1
       with:
@@ -40,14 +43,30 @@ jobs:
         npm ci
         npm run build --if-present
         npm test
-    - name: Dump GitHub context to file
+    - name: Write GitHub context to JSON file
       env:
         GITHUB_CONTEXT: ${{ toJson(github) }}
       run: |
         # echo "$GITHUB_CONTEXT"
         echo "$GITHUB_CONTEXT" > ./github-context.json
+    - uses: actions/upload-artifact@v1
+      with:
+        name: all-code-artifact
+        path: '.'
+
+  job_deploy:
+    name: Deploy to Azure Web App.
+    needs: job_build
+    runs-on: ubuntu-latest
+    steps:
+
+    - uses: actions/download-artifact@v1
+      with:
+        name: all-code-artifact
+    - name: Pre-deploy
+      run: |
         pwd
-        ls -lh
+        ls -alh | egrep '\.(env|json)'
     - name: No deploy
       if: "github.event_name != 'release'"
       run: "echo Event: '${{ github.event_name }}' ~ No deploy"
