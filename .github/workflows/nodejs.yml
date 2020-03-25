@@ -49,10 +49,12 @@ jobs:
       run: |
         # echo "$GITHUB_CONTEXT"
         echo "$GITHUB_CONTEXT" > ./github-context.json
+    - name: Zip
+      run: npm run code.zip && ls -lh *.zip
     - uses: actions/upload-artifact@v1
       with:
-        name: all-code-artifact
-        path: '.'
+        name: code-artifact
+        path: code.zip
 
   job_deploy:
     name: Deploy to Azure Web App.
@@ -62,11 +64,14 @@ jobs:
 
     - uses: actions/download-artifact@v1
       with:
-        name: all-code-artifact
-    - name: Pre-deploy
+        name: code-artifact
+    - name: Unzip
       run: |
+        ls -alh
+        unzip code.zip
         pwd
-        ls -alh | egrep '\.(env|json)'
+        ls -alh
+        # ls -alh | egrep '\.(env|json)'
     - name: No deploy
       if: "github.event_name != 'release'"
       run: "echo Event: '${{ github.event_name }}' ~ No deploy"
