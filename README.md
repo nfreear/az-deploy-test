@@ -16,7 +16,7 @@ The workflow _triggers_ and resulting branches are:
  2. Or, a `release published` event — '_install, build and test_', then [`Deploy..`][r]!
  3. Or, a `push` event with `[deploy]` in the commit message — '_install, build and test_', then [`Deploy..`][pd]!
 
-Here is a cut down version of [`.github/workflows/nodejs.yml`][w]:
+Here is a cut down version of [`.github/workflows/nodejs.yml`][wf]:
 
 ```yaml
 name: Deploy Node.js to Azure Web App
@@ -48,11 +48,21 @@ jobs:
         package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
 ```
 
+## Actions
+
+These official and third-party actions are used in the workflow:
+
+ * [GitHub: `actions/upload-artifact`][act-ua]
+ * [GitHub: `actions/download-artifact`][act-da]
+ * [GitHub: `azure/webapps-deploy`][act-azd]
+
+Read [persisting workflow data using artifacts][ar].
+
 ---
 License: [MIT](https://nfreear.mit-license.org/ "MIT License")
 
 [site]: https://ndf-test.azurewebsites.net/index.html
-[w]: https://github.com/nfreear/az-deploy-test/blob/master/.github/workflows/nodejs.yml#L54-L61
+[wf]: https://github.com/nfreear/az-deploy-test/blob/master/.github/workflows/nodejs.yml#L54-L61
   "nodejs YAML"
 [gc]: https://help.github.com/en/actions/reference/context-and-expression-syntax-for-github-actions#github-context
 [t]: https://github.com/Azure/actions-workflow-samples/blob/master/AppService/node.js-webapp-on-azure.yml#L35-L40
@@ -63,6 +73,13 @@ License: [MIT](https://nfreear.mit-license.org/ "MIT License")
   "'Push' event — NO deploy!"
 [pd]: https://github.com/nfreear/az-deploy-test/runs/522102394?check_suite_focus=true#step:7:1
   "'Push' event, with '[deploy]' in commit message — Deploy happens!"
+[ar]: https://help.github.com/en/actions/configuring-and-managing-workflows/persisting-workflow-data-using-artifacts#passing-data-between-jobs-in-a-workflow
+  "Passing data between jobs in a workflow — GitHub Help"
+[ca]: https://help.github.com/en/actions/configuring-and-managing-workflows/caching-dependencies-to-speed-up-workflows#
+  "Caching dependencies to speed up workflows — GitHub Help"
+[act-ua]:  https://github.com/actions/upload-artifact.git
+[act-da]:  https://github.com/actions/download-artifact.git
+[act-azd]: https://github.com/azure/webapps-deploy.git
 
 [gh-badge]: https://github.com/nfreear/az-deploy-test/workflows/Deploy%20Node.js%20to%20Azure/badge.svg
 [gh-link]:  https://github.com/nfreear/az-deploy-test/actions

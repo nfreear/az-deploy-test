@@ -10,7 +10,10 @@
   "scripts": {
     "start": "node lib/index.js --local",
     "test": "npx semistandard",
-    "code.zip": "zip -qr code.zip . -x .git *.zip"
+    "code.zip": "zip -qr code.zip . -x .git/* *.zip && ls -lh *.zip"
+  },
+  "engines": {
+    "node": ">= 12.0"
   },
   "devDependencies": {},
   "dependencies": {
