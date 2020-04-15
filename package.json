@@ -17,6 +17,8 @@
   },
   "devDependencies": {},
   "dependencies": {
+    "dotenv": "^8.2.0",
+    "mysql2": "^2.1.0",
     "restify": "^8.5.1"
   },
   "peerDependencies": {

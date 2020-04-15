@@ -10,6 +10,8 @@ Testing continuous deployment (_CD_) to an Azure Web App.
 It uses a _GitHub workflow_ based on this [YAML template][t]
 and the [GitHub context][gc].
 
+## Workflow
+
 The workflow _triggers_ and resulting branches are:
 
  1. A `push` event 	— '_install, build and test_', then [`No deploy`][p]!
@@ -58,11 +60,24 @@ These official and third-party actions are used in the workflow:
 
 Read [persisting workflow data using artifacts][ar].
 
+## Database
+
+```sql
+CREATE TABLE azure_test.test (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(12) NOT NULL,
+  value TEXT,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB CHARSET=utf8;
+
+INSERT INTO azure_test.test (name, value) VALUES ('greeting', 'Hello world!');
+```
+
 ---
 License: [MIT](https://nfreear.mit-license.org/ "MIT License")
 
-[site]: https://ndf-test.azurewebsites.net/index.html
-[wf]: https://github.com/nfreear/az-deploy-test/blob/master/.github/workflows/nodejs.yml#L54-L61
+[site]: https://ndf-test.azurewebsites.net/
+[wf]: https://github.com/nfreear/az-deploy-test/blob/master/.github/workflows/nodejs.yml#L78-L85
   "nodejs YAML"
 [gc]: https://help.github.com/en/actions/reference/context-and-expression-syntax-for-github-actions#github-context
 [t]: https://github.com/Azure/actions-workflow-samples/blob/master/AppService/node.js-webapp-on-azure.yml#L35-L40
