@@ -65,10 +65,10 @@ Read [persisting workflow data using artifacts][ar].
 ```sql
 CREATE TABLE azure_test.test (
   id INT AUTO_INCREMENT PRIMARY KEY,
-  name VARCHAR(12) NOT NULL,
+  name VARCHAR( 24 ) NOT NULL,
   value TEXT,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB CHARSET=utf8;
+) ENGINE = InnoDB CHARSET = utf8 ;
 
 INSERT INTO azure_test.test (name, value) VALUES ('greeting', 'Hello world!');
 ```
