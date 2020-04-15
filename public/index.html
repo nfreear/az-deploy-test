@@ -15,12 +15,12 @@
       const $PRE = document.querySelector('#deploy-data');
 
       setTimeout(() => {
-        console.warn('API data:', data, $PRE);
+        console.warn('API response:', data, $PRE);
 
         $PRE.innerHTML = '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
         $PRE.classList.add('loaded');
       },
-      2000);
+      2500);
     });
 </script>
 

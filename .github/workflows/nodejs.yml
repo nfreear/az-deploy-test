@@ -25,7 +25,7 @@ env:
 
 jobs:
   job_build:
-    name: Build and Test
+    name: 1. Build and Test
     runs-on: ubuntu-latest
     steps:
 
@@ -38,8 +38,6 @@ jobs:
         node-version: ${{ env.NODE_VERSION }}
     - name: npm install, build, and test
       run: |
-        # Build and test the project, then
-        # deploy to Azure Web App.
         npm ci
         npm run build --if-present
         npm test
@@ -49,23 +47,25 @@ jobs:
       run: |
         # echo "$GITHUB_CONTEXT"
         echo "$GITHUB_CONTEXT" > ./github-context.json
-    - name: Zip
+    - name: Zip-up build-artifact
       run: npm run code.zip
-    - uses: actions/upload-artifact@v1
+    - name: Upload build-artifact
+      uses: actions/upload-artifact@v1
       with:
-        name: code-artifact
+        name: build-artifact
         path: code.zip
 
   job_deploy:
-    name: Deploy to Azure Web App.
+    name: 2. Deploy to Azure Web App
     needs: job_build
     runs-on: ubuntu-latest
     steps:
 
-    - uses: actions/download-artifact@v1
+    - name: Download build-artifact
+      uses: actions/download-artifact@v1
       with:
-        name: code-artifact
-    - name: Unzip
+        name: build-artifact
+    - name: Unzip build-artifact
       run: |
         pwd
         ls -lh code-artifact
