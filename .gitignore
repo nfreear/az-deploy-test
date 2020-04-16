@@ -4,4 +4,6 @@
 node_modules
 *version*
 github-context.json
+*BAK*
 *.zip
+*.sql
