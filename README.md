@@ -16,7 +16,6 @@ and the [GitHub context][gc].
 npm install
 npm start
 npm test
-npm run db:test
 ```
 
 ## Workflow
@@ -71,6 +70,13 @@ Read [persisting workflow data using artifacts][ar].
 
 ## Database
 
+Testing [mysql2][], [knex][] and [bookshelf][] libraries.
+
+```sh
+cp .env.example .env && vi .env
+npm run db:test
+```
+
 ```sql
 CREATE TABLE azure_test.test (
   id INT AUTO_INCREMENT PRIMARY KEY,
@@ -105,6 +111,10 @@ License: [MIT](https://nfreear.mit-license.org/ "MIT License")
 [act-da]:  https://github.com/actions/download-artifact.git
 [act-azd]: https://github.com/azure/webapps-deploy.git
 
+[mysql2]: https://github.com/sidorares/node-mysql2 "'mysql2' — database library"
+[knex]: http://knexjs.org/ "'knex.js' — SQL query builder"
+[bookshelf]: https://bookshelfjs.org/ "'bookshelf.js' — database ORM"
+
 [gh-badge]: https://github.com/nfreear/az-deploy-test/workflows/Deploy%20Node.js%20to%20Azure/badge.svg
 [gh-link]:  https://github.com/nfreear/az-deploy-test/actions
-  "Status ~ 'Deploy Node.js to Azure Web App'"
+  "Status — 'Deploy Node.js to Azure Web App'"
