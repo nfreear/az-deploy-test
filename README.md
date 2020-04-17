@@ -10,6 +10,15 @@ Testing continuous deployment (_CD_) to an Azure Web App.
 It uses a _GitHub workflow_ based on this [YAML template][t]
 and the [GitHub context][gc].
 
+## Usage
+
+```sh
+npm install
+npm start
+npm test
+npm run db:test
+```
+
 ## Workflow
 
 The workflow _triggers_ and resulting branches are:
