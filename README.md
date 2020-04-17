@@ -3,11 +3,12 @@
 
 # az-deploy-test
 
-Testing continuous deployment (_CD_) to an Azure Web App.
+Testing continuous deployment (_CD_) to an Azure Web App,
+and MySQL database libraries.
 
  * [ndf-test.azurewebsites.net][site]
 
-It uses a _GitHub workflow_ based on this [YAML template][t]
+Uses a _GitHub workflow_ based on this [YAML template][t]
 and the [GitHub context][gc].
 
 ## Usage
@@ -20,7 +21,7 @@ npm test
 
 ## Workflow
 
-The workflow _triggers_ and resulting branches are:
+The workflow _triggers_ and resulting logic-branches are:
 
  1. A `push` event 	— '_install, build and test_', then [`No deploy`][p]!
  2. Or, a `release published` event — '_install, build and test_', then [`Deploy..`][r]!
@@ -70,12 +71,14 @@ Read [persisting workflow data using artifacts][ar].
 
 ## Database
 
-Testing [mysql2][], [knex][] and [bookshelf][] libraries.
+Testing [mysql2][], [knex][] and [bookshelf][] database libraries.
 
 ```sh
 cp .env.example .env && vi .env
 npm run db:test
 ```
+
+### MySQL
 
 ```sql
 CREATE TABLE azure_test.test (
@@ -85,12 +88,13 @@ CREATE TABLE azure_test.test (
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 ) ENGINE = InnoDB CHARSET = utf8 ;
 
-INSERT INTO azure_test.test (name, value) VALUES ('greeting', 'Hello world!');
+INSERT INTO azure_test.test ( name, value ) VALUES ( 'greeting', 'Hello world!' );
 ```
 
 ---
-License: [MIT](https://nfreear.mit-license.org/ "MIT License")
+License: [MIT](https://nfreear.mit-license.org/ "MIT License | Nick Freear, 20-Mar-2020.").
 
+[mit]: https://nfreear.mit-license.org/ "MIT License | © Nick Freear, 20-March-2020."
 [site]: https://ndf-test.azurewebsites.net/
 [wf]: https://github.com/nfreear/az-deploy-test/blob/master/.github/workflows/nodejs.yml#L78-L85
   "nodejs YAML"
@@ -111,7 +115,7 @@ License: [MIT](https://nfreear.mit-license.org/ "MIT License")
 [act-da]:  https://github.com/actions/download-artifact.git
 [act-azd]: https://github.com/azure/webapps-deploy.git
 
-[mysql2]: https://github.com/sidorares/node-mysql2 "'mysql2' — database library"
+[mysql2]: https://github.com/sidorares/node-mysql2 "'mysql2' — low-level database library"
 [knex]: http://knexjs.org/ "'knex.js' — SQL query builder"
 [bookshelf]: https://bookshelfjs.org/ "'bookshelf.js' — database ORM"
 
