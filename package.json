@@ -23,7 +23,7 @@
   "dependencies": {
     "bookshelf": "^1.1.1",
     "dotenv": "^8.2.0",
-    "knex": "^0.20.15",
+    "knex": "^2.4.0",
     "mysql2": "^2.1.0",
     "restify": "^8.5.1"
   },
